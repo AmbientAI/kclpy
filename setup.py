@@ -140,9 +140,6 @@ Which will download the required jars and rerun the install.
             return
 
     def download_files(self):
-        # Ensure the jar directory exists
-        os.makedirs(self.destdir, exist_ok=True)
-        
         for package in self.packages:
             dest = os.path.join(self.destdir, self.package_destination(package[1], package[2]))
             if os.path.isfile(dest):
